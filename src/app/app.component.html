@@ -1,0 +1,54 @@
+<ejs-treegrid
+  [dataSource]="data"
+  [treeColumnIndex]="1"
+  [sortSettings]="sortSettings"
+  [allowFiltering]="true"
+  [allowSorting]="true"
+  childMapping="subtasks"
+  [allowPaging]="true"
+  [pageSettings]="pageSettings"
+  [editSettings]="editSettings"
+  [toolbar]="toolbar"
+>
+  <e-columns>
+    <e-column
+      field="taskID"
+      headerText="Task ID"
+      textAlign="Center"
+      width="40"
+      isPrimaryKey="true"
+    ></e-column>
+    <e-column
+      field="taskName"
+      headerText="Task Name"
+      textAlign="Left"
+      width="180"
+    ></e-column>
+    <e-column
+      field="startDate"
+      headerText="Start Date"
+      textAlign="Center"
+      format="yMd"
+      width="90"
+      editType="datepickeredit"
+    ></e-column>
+    <e-column
+      field="duration"
+      headerText="Duration"
+      textAlign="Center"
+      width="80"
+      editType="numericedit"
+      [edit]="numericParams"
+    ></e-column>
+    <e-column
+      field="approved"
+      headerText="Approved"
+      type="boolean"
+      [displayAsCheckBox]="true"
+      textAlign="Center"
+      width="90"
+      editType="booleanedit"
+    ></e-column>
+    <!-- <e-column headerText='Commands' width=120 [commands]='commands'></e-column> -->
+  </e-columns>
+</ejs-treegrid>
